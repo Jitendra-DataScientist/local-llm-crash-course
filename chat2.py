@@ -16,7 +16,7 @@ def get_prompt (instruction: str, history: List[str] = None) -> str:
 @cl.on_message
 async def on_message(message: cl.Message):
     message_history = cl.user_session.get("message_history")
-    msg = cl.message(content="")
+    msg = cl.Message(content="")
     await msg.send()
 
     prompt = get_prompt(message.content, message_history)
@@ -24,7 +24,8 @@ async def on_message(message: cl.Message):
     for word in llm(prompt, stream=True):
         await msg.stream_token(word)
         response += word
-    await msg.update
+    # await msg.update
+    msg.update
     message_history.append(response)
 
 
