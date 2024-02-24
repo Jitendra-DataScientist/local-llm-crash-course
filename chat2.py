@@ -37,26 +37,3 @@ def on_chat_start():
         "zoltanctoth/orca_mini_3B-GGUF",
         model_file="orca-mini-3b.q4_0.gguf",
         )
-
-
-
-"""
-history = []
-answer = ""
-question = "Which city is the capital of India?"
-for word in llm(get_prompt(question), stream=True):
-    print (word, end="", flush=True)
-    answer += word
-history.append(answer)
-
-answer = ""
-question = "And which city is of the United States?"
-for word in llm(get_prompt(question, history), stream=True):
-    print (word, end="", flush=True)
-    answer += word
-history.append(answer)
-
-question = "What about Saudi Arabia's?"
-for word in llm(get_prompt(question, history), stream=True):
-    print (word, end="", flush=True)
-"""
